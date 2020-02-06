@@ -1,3 +1,7 @@
 # insight_DS
 Data science project at Insight
-This is consulting project with Rightstrain to personalize news tracking.
+This is consulting project with Right Strain to personalize news tracking. Since many of the articles contain companies and locations, first step is to extract the import entities. Without the labels of entities, spaCy with pre-trained Name Entity Recognition models is applied to identity the entities (mainly companies, organizations and locations) within content of the articles.  To link users to similar stories, titles of news are embedding with sentence transformer. Based on cosine similarity of the titles, users can retrieve articles of the similar topics within specific company. This article recommendation web-app is based on the semantic searching of titles. 
+
+The pipeline is first cleaning the data, aggregating all news and reducing the duplicates terms. Since topic modeling contains too many entities like companies' name, to retrieve the similar stories with specific company, I employ two parallel stage modeling system. One part is using Bert extractive summary to summarize articles to key sentences and then with NER from spaCy to extract the entities within these sentences. Another part is performing the semantic searching based on cosine similarity of titles with sentence transformer.
+
+src contains all the source code include data clean, data preprocessing, exploratory data analysis,  topic modeling, article summarizer with transformer and NER, sentence embedding etc.
