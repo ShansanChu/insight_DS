@@ -27,23 +27,23 @@ def print_top_words(model, feature_names, n_top_words):
         print(message)
         print()
 
+
 def RemoveHTTP(sentence):
     unr = ['To learn more', 'For more information', 'Contact:', 'Original press', 'Further information']
     for i in unr:
         idx = sentence.find(i)
         if idx != -1:
-            sentence= sentence[:idx]
+            sentence = sentence[:idx]
     sentence = sentence.lower()
-    sentence = re.sub(r'http:\\*/\\*/.*?\s', ' ', sentence)
-    sentence = re.sub(r'http:\\*/\\*/.*?\s', ' ', sentence)
+    sentence = re.sub(r'http:\\*/\\*/.*?\s', ' ', sentence)# remove url
     sentence = re.sub(r'www.\S+', '', sentence)  # remove url
     sentence = re.sub(r'[\w\.-]+@[\w\.-]+', '', sentence)  # remove email
-    #sen=' '.join(sen for sen in sent_tokenize(sentence) if not '@' in sen)
-    #sentence=re.sub(r"[^a-zA-Z0-9]","",sentence)
-    #sen=' '.join(i for i in sentence.split('\xa0') if not i.startswith('http'))
-    #sen=' '.join(i for i in sen.split('\n') if not 'http://' in i)
-    sentence = re.sub(r'[\W_]+', ' ', sentence)
-    sen = re.sub(r"[^a-zA-Z]"," ",sentence) #here exclude the number also
+    # sen=' '.join(sen for sen in sent_tokenize(sentence) if not '@' in sen)
+    # sentence=re.sub(r"[^a-zA-Z0-9]","",sentence)
+    # sen=' '.join(i for i in sentence.split('\xa0') if not i.startswith('http'))
+    # sen=' '.join(i for i in sen.split('\n') if not 'http://' in i)
+    sentence = re.sub(r'[\W_]+', ' ', sentence) # remove special characters
+    sen = re.sub(r"[^a-zA-Z]", " ", sentence) # here exclude the number also
     return sen
 
 

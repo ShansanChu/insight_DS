@@ -1,3 +1,6 @@
+"""
+Find close based on tile
+"""
 import pandas
 from sentence_transformers import SentenceTransformer
 from nltk.tokenize import sent_tokenize
@@ -26,16 +29,26 @@ def print_close_docs(doc_em, corpus_emb, df):
     fs_dis = [cosine(corpus_emb[i], doc_em) for i in range(len(corpus_emb))]
     fs_0 = np.argsort(np.array(fs_dis))
     res = []
+    date = []
+    distance = []
+    title = []
+    org = []
     for i in fs_0[:20]:
         # print(df.ORG.iloc[i][1:-1])
+        date.append(df.date.iloc[i])
+        distance.append(round(fs_dis[i],3))
+        title.append(df.title.iloc[i])
         res.append(df.date.iloc[i]+"---------"+df.title.iloc[i]+'========Distance is: '+str(round(fs_dis[i],3)))
         all_orgs = [re.sub('\W+', ' ', i) for i in df['ORG'].iloc[i][1:-1].split(',')]
-        if len(all_orgs) > 1:
+        if len(all_orgs[0]) > 1:
             res.append('The related companies/Organization are:' +', '.join(i for i in set(all_orgs)))
+            org.append(', '.join(i for i in set(all_orgs)))
         else:
             res.append('None company found')
+            org.append('None')
         # print([fs_dis[i] for i in fs_0[:10]])
-    return res
+    d = {'Date': date, 'Distance': distance, 'Organization': org, 'Title': title}
+    return res, pandas.DataFrame(d)
 
 
 def get_close_docs(text, df):

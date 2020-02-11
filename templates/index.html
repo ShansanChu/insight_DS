@@ -162,67 +162,37 @@
                	<h4 class="text-center">
                	<li class="d-flex justify-content-between align-items-center active">
                          	<b style="color: green;">{{my_input}}</b>
-                            <!--<b>{{my_output}}</b>
-
-                        	<span class="badge badge-primary badge-pill">{{my_number}} followers</span>-->
+                        	<!--<span class="badge badge-primary badge-pill">{{my_number}} followers</span>-->
                       	</li>
                     	</h4>
               	</ul>
         	</div>
-            <div class="row">
+        <!--<div class="row">
               <h4 class="text-center">
                	<li class="d-flex justify-content-between align-items-center active">
         	    <b>{{my_output0}}</b>
                 </li>
               </h4>
-        	</div>
-      <div class="row"><!--<div class="col">-->
-              <h4 class="text-center">
-               	<li class="d-flex justify-content-between align-items-center active">
-        	    <b style="color: blue;">{{my_output1}}</b>
-                </li>
-              </h4>
-        	</div>
-      <div class="row"><!--<div class="col">-->
-              <h4 class="text-center">
-               	<li class="d-flex justify-content-between align-items-center active">
-        	    <b style="color: black;">{{my_output2}}</b>
-                </li>
-              </h4>
-        	</div>
-      <div class="row">
-              <h4 class="text-center">
-               	<li class="d-flex justify-content-between align-items-center active">
-        	    <b style="color: blue;">{{my_output3}}</b>
-                </li>
-              </h4>
-        	</div>
-      <div class="row">
-              <h4 class="text-center">
-               	<li class="d-flex justify-content-between align-items-center active">
-        	    <b style="color: black;">{{my_output4}}</b>
-                </li>
-              </h4>
-        	</div>
-      <div class="row">
-              <h4 class="text-center">
-               	<li class="d-flex justify-content-between align-items-center active">
-        	    <b style="color: blue;">{{my_output5}}</b>
-                </li>
-              </h4>
-        	</div>
-      <!--<div class="row">
-              <h4 class="text-center">
-               	<li class="list-group-item d-flex justify-content-between align-items-center active">
-        	    <b style="color: black;">{{my_output5}}</b>
-                </li>
-              </h4>
-        	</div>-->
-        	<!--<div class="col">
-        	<img src="{{ url_for('static', filename = my_img_name) }}" width=500 height=416>
         	</div>-->
   	</div>
-
+    <table border="2">
+    <thead>
+        <tr>
+            {% for col in colnames %}
+            <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>
+            {% for col in colnames %}
+            <td>{{ record[col] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
   	{% else %}
   	{% endif %}
   	</div>
