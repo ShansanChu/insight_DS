@@ -1,10 +1,10 @@
 # BizPulse: Connect people to content
 
 ## Overview
-Data science project at Insight Data Science 2020 January. This is a project with Right Strain to recommend similar topic news articles. 
+Data science project at Insight Data Science 2020 January. This is a project with Right Strain to link users with similar topic news articles. 
 
 ## Problem
-First approach for this problem, topic modeling is used on all news articles to extract topics. However, the topics with topic modeling pops out companies and locations rather than different topics like investment, products or new policies.
+The data source is news articles from [new cannabis ventures](https://www.newcannabisventures.com) from 2015 August to 2019 December. First approach for this problem, topic modeling is used on all news articles to extract topics. However, topics with topic modeling pops out companies and locations rather than different topics like investment, products or new policies.
 
 ## Solution
 Since many of the articles contain too many entities like companies and locations, first step is to extract the import entities. Without the labels of entities, spaCy with pre-trained Name Entity Recognition models is applied to identity the entities (mainly companies, organizations and locations) within content of the articles.
