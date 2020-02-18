@@ -1,5 +1,5 @@
 # insight_DS
-Data science project at Insight Data Science 2020 January. This is consulting project with Right Strain to recommend similar topic news articles. It's a NLP project. First approach for this problem, I used bag of words as well as tf-idf to perform topic modeling. However, the topics with topic modeling pops out companies and locations rather than different topics like investment, products or new policies.
+Data science project at Insight Data Science 2020 January. This is consulting project with Right Strain to recommend similar topic news articles. First approach for this problem, I used bag of words as well as tf-idf to perform topic modeling. However, the topics with topic modeling pops out companies and locations rather than different topics like investment, products or new policies.
 
 Since many of the articles contain companies and locations, first step is to extract the import entities. Without the labels of entities, spaCy with pre-trained Name Entity Recognition models is applied to identity the entities (mainly companies, organizations and locations) within content of the articles.
 
