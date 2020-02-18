@@ -19,3 +19,6 @@ src contains all the source code include data clean, data preprocessing, explora
 Web-app is built with flask on aws. Try on the website [Sites Using flask](http://www.dsprojectsz.club:5000).
 
 ## Prerequisite
+
+## Reference
+*[Sentence BERT](https://github.com/UKPLab/sentence-transformers)
