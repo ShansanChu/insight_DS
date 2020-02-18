@@ -21,4 +21,6 @@ Web-app is built with flask on aws. Try on the website [Sites Using flask](http:
 ## Prerequisite
 
 ## Reference
-*[Sentence BERT](https://github.com/UKPLab/sentence-transformers)
+*[Sentence BERT](https://github.com/UKPLab/sentence-transformers): Fine tuning BERT on semantic similarity 
+*[ROUGE-n](http://nlpprogress.com/english/summarization.html): Metrics to evaluate the performance of articles' summary
+* [Extractive summary bert](https://github.com/dmmiller612/bert-extractive-summarizer)
