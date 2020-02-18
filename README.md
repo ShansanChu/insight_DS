@@ -9,3 +9,5 @@ To link users to similar stories, titles of news are embedding with sentence tra
 The pipeline is first cleaning the data, aggregating all news and reducing the duplicates terms, url, emails etcs. To retrieve the similar topic stories with specific company, semantic search based on cosine similarity of titles and key sentences with sentence transformer is employed.
 
 src contains all the source code include data clean, data preprocessing, exploratory data analysis, topic modeling, article summarizer with transformer and NER, sentence embedding etc.
+
+Web-app is built with flask on aws. Try on the website [Sites Using flask](http://www.dsprojectsz.club:5000).
