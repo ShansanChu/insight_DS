@@ -1,4 +1,4 @@
-# BizPulse--Connect people to content
+# BizPulse: Connect people to content
 
 ## Overview
 Data science project at Insight Data Science 2020 January. This is a project with Right Strain to recommend similar topic news articles. 
