@@ -18,6 +18,9 @@ src contains all the source code include data clean, data preprocessing, explora
 ## Demo
 Web-app is built with flask on aws. Try on the website [Sites Using flask](http://www.dsprojectsz.club:5000).
 
+User can input the title of news or any sentence they are interested in Cannabis market. Closest articles can be retrieved from our database. Take recent news title "Indiva Receives Edibles, Extracts and Topicals Sales Licence From Health Canada" as an example, the article retrived are as below.
+![Alt text](demo_screenshot.png?raw=true "Demo_screen")
+
 ## Prerequisite
 
 ## Reference
