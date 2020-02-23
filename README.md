@@ -1,7 +1,7 @@
 # BizPulse: Connect people to content
 
 ## Overview
-Data science project at Insight Data Science 2020 January. This is a project with Right Strain to link users with similar topic news articles. 
+Data science project at Insight Data Science 2020 January. This is a project with Right Strain to link users with similar topic news articles. This is data-retrival/recommendation system
 
 ## Problem
 The data source is news articles from [new cannabis ventures](https://www.newcannabisventures.com) from 2015 August to 2019 December. First approach for this problem, topic modeling is used on all news articles to extract topics. However, topics with topic modeling pops out companies and locations rather than different topics like investment, products or new policies.
