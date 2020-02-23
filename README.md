@@ -22,11 +22,11 @@ User can input the title of news or any sentence they are interested in Cannabis
 ![Alt text](demo_screenshot.png?raw=true "Demo_screen")
 
 ## Prerequisite
-python 3.7
-sentence transformer
-torch
-transformers
-bert-extractive-summarizer
+* python 3.7
+* sentence transformer
+* torch
+* transformers
+* bert-extractive-summarizer
 
 ## Reference
 * [Sentence BERT](https://github.com/UKPLab/sentence-transformers): Fine tuning BERT on semantic similarity 
