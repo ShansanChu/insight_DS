@@ -3,6 +3,7 @@ import nltk
 import numpy as np
 from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize
+from nltk.stem import WordNetLemmatizer
 from scipy.spatial.distance import cosine
 import pandas
 from nltk.tokenize import sent_tokenize,word_tokenize
@@ -13,9 +14,8 @@ import sys
 import os
 package_dir = os.path.dirname(os.path.abspath('__file__'))
 thefile = os.path.join(package_dir, '../data/cleaned.csv')
-# os.chdir('../data')
-# sys.path.append("../data")
-# sys.path.append("..")
+lemmatizer=WordNetLemmatizer()
+nltk.download('wordnet')
 stop_words=stopwords.words('english')
 stop_words.extend(['cannabis', 'company', 'marijuana', 'companies'])
 
@@ -38,12 +38,9 @@ def RemoveHTTP(sentence):
     sentence = re.sub(r'http:\\*/\\*/.*?\s', ' ', sentence)# remove url
     sentence = re.sub(r'www.\S+', '', sentence)  # remove url
     sentence = re.sub(r'[\w\.-]+@[\w\.-]+', '', sentence)  # remove email
-    # sen=' '.join(sen for sen in sent_tokenize(sentence) if not '@' in sen)
-    # sentence=re.sub(r"[^a-zA-Z0-9]","",sentence)
-    # sen=' '.join(i for i in sentence.split('\xa0') if not i.startswith('http'))
-    # sen=' '.join(i for i in sen.split('\n') if not 'http://' in i)
     sentence = re.sub(r'[\W_]+', ' ', sentence) # remove special characters
     sen = re.sub(r"[^a-zA-Z]", " ", sentence) # here exclude the number also
+    sen =" ".join(lemmatizer.lemmatize(word) for word in sen.split())
     return sen
 
 
@@ -101,6 +98,7 @@ def query_close_doc(idx):
 
 def query_new_doc(content,title=None,date=None):
     """
+    article retrieval with tf-idf vectorizer
     :param content: new article content
     :param title: title of new added articles
     :param date: the time when articles being published
@@ -120,9 +118,9 @@ if __name__ == '__main__':
     feature_names = count_vectorizer.get_feature_names()
     lda_model = modeling_lda(X_count,num_topics)
     nmf_model = modeling_nmf()
-    df.tem_title = df.title.apply(lambda x: [x])
-    corpus = df.tem_title.agg(sum)
-    query_close_doc(101)
+    #df.tem_title = df.title.apply(lambda x: [x])
+    #corpus = df.tem_title.agg(sum)
+    #query_close_doc(101)
     # print(nmf_model.transform(dtm)[:10])
     #print(nmf_model.components_)
     #print(df1.content.iloc[100])
@@ -132,5 +130,5 @@ if __name__ == '__main__':
     #print_close_docs(dtm[101],dtm,corpus)
     #print(lda_model.transform(X_count[1000]))
     #print(lda_model.transform(X_count[:3]))
-    #print_top_words(lda_model,feature_names,10)
-    #print_top_words(nmf_model,feature_nmf,10)
+    print_top_words(lda_model,feature_names,10)
+    print_top_words(nmf_model,feature_nmf,10)
