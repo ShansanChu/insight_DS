@@ -17,7 +17,7 @@ The pipeline is first cleaning the data, aggregating all news and reducing the d
 src contains all the source code include data clean, data preprocessing, exploratory data analysis, topic modeling, article summarizer with transformer and NER, sentence embedding etc.
 ## Demo
 Web-app is built with flask on aws. Try on the website [Sites Using flask](http://www.dsprojectsz.club:5000).
-For more information about this project please refer to [google_slides](https://docs.google.com/presentation/d/1AXWpQLDWVyVF1yx0j8vr49BskyDWFhoYovmPUQvvH1o/edit#slide=id.g816423b32e_0_321)
+For more information about summary technique and sentence embedding in this project please refer to [google_slides](https://docs.google.com/presentation/d/1AXWpQLDWVyVF1yx0j8vr49BskyDWFhoYovmPUQvvH1o/edit#slide=id.g816423b32e_0_321)
 
 
 User can input the title of news or any sentence they are interested in Cannabis market. Closest articles can be retrieved from our database. Take recent news title "Indiva Receives Edibles, Extracts and Topicals Sales Licence From Health Canada" as an example, the article retrived are as below.
